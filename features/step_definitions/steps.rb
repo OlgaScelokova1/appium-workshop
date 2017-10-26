@@ -22,15 +22,16 @@
 # https://www.relishapp.com/rspec/rspec-expectations/docs
 
 
-Given /^I am on intro screen$/ do
- @tests.test_intro.intro_visible?
-end
-
-Given /^I am on create filter screen$/ do
-  @tests.test_intro.close_intro
-end
-
-
-Given /^I create empty property filter$/ do
- @tests.test_add_filter.create_empty_filter
+Given /^I am on welcome screen$/ do
+ sleep(2)
+ $driver.find_element(:xpath, '//*[@text="Transports"][@resource-id="com.testdevlab.notifyus:id/main_row_text"]').click
+ sleep(2)
+ print $driver.find_element(:xpath, '//*[@text="Vieglie auto"][@resource-id="com.testdevlab.notifyus:id/category_name"]').text
+ sleep(2)
+ $driver.press_keycode(4)
+ sleep(2)
+ $driver.find_element(:xpath, '//*[@class="android.widget.ImageButton"]').click
+ sleep(2)
+ $driver.find_element(:xpath, '//*[@resource-id="com.testdevlab.notifyus:id/item_name"][@text="Meklēšanas filtri"]').click
+ sleep(2)
 end

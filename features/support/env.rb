@@ -6,22 +6,23 @@
 
 require 'rspec/expectations'
 require 'appium_lib'
-require 'cucumber/ast'
 require_relative 'server'
-require_relative '../screens/screen_base'
+require_relative '../pages/base_page'
 
 # Create a custom World class so we don't pollute `Object` with Appium methods
 class AppiumWorld
 end
 
-# TODO pass device option dynamicaly to allow simultaneous runs on different devices
 options = {
   'port' => 5500,
   'portboot' => 5051,
+<<<<<<< HEAD
   'sn' => 'LGH440n30a10d57',
+=======
+  'sn' => 'BYJDU17511001133',
+>>>>>>> b145932191a049eccbb072dcc7d10324d518e199
   'app' => 'app.apk',
   'appPackage' => 'com.testdevlab.notifyus'
-
 }
 server = Server.new(options)
 server.reinstall_app
@@ -45,10 +46,13 @@ World do
 end
 
 Before do
+  @pages = Pages.new
   $driver.start_driver
-  @screens = Screens.new $driver
-  @tests = Tests.new @screens
 end
 After do
   $driver.driver_quit
+end
+
+at_exit do
+  server.stop
 end

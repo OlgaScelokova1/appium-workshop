@@ -13,10 +13,16 @@ class Server
   end
 
   def stop
-    `killall -9 node`
+    lines = `ps ax | grep #{@sn} | grep node`.split("\n")
+    lines.each do |line|
+      pid = line.split(' ').first
+      `kill -9 #{pid}`
+    end
   end
 
   def uninstall_app
+    `adb -s #{@sn} uninstall io.appium.settings`
+    `adb -s #{@sn} uninstall io.appium.unlock`
     `adb -s #{@sn} uninstall #{@app_package}`
   end
 

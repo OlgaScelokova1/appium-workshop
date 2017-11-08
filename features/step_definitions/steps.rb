@@ -34,3 +34,19 @@ end
 Given /^I open sub cat Vieglie auto/ do
   @pages.page_sub_category.open_sub_category("Vieglie auto")
 end
+
+Given /^I press Porsche$/ do
+  @pages.page_sub_category.open_sub_category("Porsche")
+end
+
+Given /^I press Porsche Panamera$/ do
+  @pages.page_sub_category.open_sub_category("Porsche Panamera")
+end
+
+Given /^I press Pardod/ do
+  @pages.page_sub_category.open_sub_category("Pārdod")
+end
+
+Given /^I am on Parametri page/ do
+  @pages.page_parameters.visible?
+end

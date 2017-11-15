@@ -12,4 +12,6 @@ class CreateFilterPage < BasePage
   def open_category(name)
     @titles_category.click_by_text(name)
   end
+
 end
+

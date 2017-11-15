@@ -43,5 +43,19 @@ end
 Given /^I set filter parameters$/ do
   @pages.page_paremeters.set_name("Test Name")
   @pages.page_paremeters.set_parameter("GADS", "1999", "2002")
+  @pages.page_paremeters.set_parameter("CENA (EUR)", "100", "40000")
   @pages.page_paremeters.save_filter
+end
+
+Given /^I go to Meklesanas filtri page$/ do
+  @pages.page_intro.press_menu_button
+  @pages.page_intro.press_search_filters_button
+end
+
+Given /^I check saved filter$/ do
+  @pages.page_search_filters.visible?
+end
+
+Given /^I delete saved filter$/ do
+  @pages.page_search_filters.open_and_delete_filter
 end

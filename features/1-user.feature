@@ -9,3 +9,10 @@ Scenario: Signup
     Then I open sub cat Visi
     Then I am on parameters page
     And I set filter parameters
+
+Scenario: Saved Filter
+    Given I am on create filter page
+    Then I go to Meklesanas filtri page
+    Then I check saved filter
+    Then I delete saved filter
+

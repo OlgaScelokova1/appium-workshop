@@ -41,7 +41,8 @@ Given /^I am on parameters page$/ do
 end
 
 Given /^I set filter parameters$/ do
-  @pages.page_paremeters.set_name("Test Name")
+  $saved_filter_name= "Test Name"
+  @pages.page_paremeters.set_name($saved_filter_name)
   @pages.page_paremeters.set_parameter("GADS", "1999", "2002")
   @pages.page_paremeters.set_parameter("CENA (EUR)", "100", "40000")
   @pages.page_paremeters.save_filter

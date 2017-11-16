@@ -21,10 +21,12 @@ class IntroPage < BasePage
   end
 
   def press_menu_button
+    @menu.visible?
     @menu.click
   end
 
   def press_search_filters_button
+    @search_filter_button.visible?
     @search_filter_button.click
   end
 end

@@ -4,7 +4,7 @@ class FilterTest
   end
 
   def close_intro
-    @pages.page_intro.close_intro_if_visible
+    #@pages.page_intro.close_intro_if_visible
     @pages.page_create_filter.visible?
   end
 
@@ -25,5 +25,15 @@ class FilterTest
   def submit_filter
     set_filter_params
     @pages.page_paremeters.save_filter
+  end
+
+  def submit_filter_no_params
+    @pages.page_paremeters.save_filter
+  end
+
+  def stay_on_set_filter_params
+    page_visible = @pages.page_paremeters.visible?
+    print page_visible
+    raise 'Lapa nav redzama' unless page_visible
   end
 end

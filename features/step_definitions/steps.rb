@@ -26,11 +26,22 @@ Given /^I am on create filter page$/ do
   @tests.filters_test.close_intro
 end
 
-
 Given /^I open filter params$/ do
   @tests.filters_test.open_filter_params
 end
 
-Given /^I submit filter/ do
+Given /^I submit filter$/ do
   @tests.filters_test.submit_filter
+end
+
+Given /^I submit filter with no params/ do
+  @tests.filters_test.submit_filter_no_params
+end
+
+Given /^I Check if I am on params screen$/ do
+  @tests.filters_test.stay_on_set_filter_params
+end
+
+Given /^I open settings screen$/ do
+  @tests.settings_test.open_settings_page
 end

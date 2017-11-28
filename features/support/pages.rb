@@ -18,4 +18,9 @@ class Pages
     @page_paremeters ||= ParametersPage.new
     @page_paremeters
   end
+
+  def page_settings
+    @page_settings ||= SettingsPage.new
+    @page_settings
+  end
 end

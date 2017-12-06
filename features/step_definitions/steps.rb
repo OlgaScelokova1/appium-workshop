@@ -27,10 +27,42 @@ Given /^I am on create filter page$/ do
 end
 
 
-Given /^I open filter params$/ do
-  @tests.filters_test.open_filter_params
+Given /^I open transports filter params$/ do
+  @tests.filters_test.open_filter_params_transports
 end
 
-Given /^I submit filter/ do
-  @tests.filters_test.submit_filter
+Given /^I submit transports filter/ do
+  @tests.filters_test.submit_filter_transports
+end
+
+Given /^I go to Meklesanas filtri page/ do
+  @tests.filters_test.open_meklesanas_page
+end
+
+Given /^I delete saved transports filter/ do
+  @tests.filters_test.delete_transports_filter
+end
+
+Given /^I open vakances filter params/ do
+  @tests.filters_test.open_filter_params_vakances
+end
+
+Given /^I submit vakances filter/ do
+  @tests.filters_test.submit_filter_vakances
+end
+
+Given /^I delete saved vakances filter/ do
+  @tests.filters_test.delete_filter_vakances
+end
+
+Given /^I open ipasumi filter params/ do
+  @tests.filters_test.open_filter_params_ipasumi
+end
+
+Given /^I submit ipasumi filter/ do
+  @tests.filters_test.submit_filter_ipasumi
+end
+
+Given /^I delete saved ipasumi filter/ do
+  @tests.filters_test.delete_filter_ipasumi
 end

@@ -16,12 +16,12 @@ end
 options = {
   'port' => 5500,
   'portboot' => 5051,
-  'sn' => 'BYJDU17511001133',
+  'sn' => 'LGH440n30a10d57',
   'app' => 'app.apk',
   'appPackage' => 'com.testdevlab.notifyus'
 }
 server = Server.new(options)
-server.reinstall_app
+#server.reinstall_app
 server.start
 # p `nmap -p 5551 localhost`
 sleep(10) # TODO replace with server up validaton

@@ -18,4 +18,9 @@ class Pages
     @page_paremeters ||= ParametersPage.new
     @page_paremeters
   end
+
+  def page_search_filters
+    @page_search_filters ||=SearchFilters.new
+    @page_search_filters
+  end
 end
